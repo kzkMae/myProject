@@ -18,8 +18,6 @@ from Check.End import *
 arguMain = sys.argv
 
 #引数の数でエラー表示
-arguMainNum = len(arguMain)
-
 checkNum = checkArgument(arguMain)
 if not (checkNum == 0):
     print '終了します'
