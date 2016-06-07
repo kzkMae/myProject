@@ -19,17 +19,13 @@ arguMain = sys.argv
 
 #引数の数でエラー表示
 arguMainNum = len(arguMain)
-print arguMainNum
 
 checkNum = checkArgument(arguMain)
 if not (checkNum == 0):
     print '終了します'
+    #print checkNum
     sys.exit()
-'''
-if not (arguMainNum == (2+1)):
-    print '引数を二つセットしてください！'
-    sys.exit()
-'''
+
 
 #APKファイル保存フォルダPath
 apkFileFpath = arguMain[1]
