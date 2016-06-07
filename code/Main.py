@@ -15,6 +15,12 @@ import sys
 arguMain = sys.argv
 
 #引数の数でエラー表示
+arguMainNum = len(arguMain)
+print arguMainNum
+if not (arguMainNum == (2+1)):
+    print '引数を二つセットしてください！'
+    sys.exit()
+
 
 #APKファイル保存フォルダPath
 apkFileFpath = arguMain[1]
