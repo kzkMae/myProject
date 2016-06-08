@@ -5,33 +5,47 @@
 #import文で使用するパッケージを指定
 #
 import sys
-from Check.End import *
-
-
+#プログラムに余裕がある場合に実装
+import argparse
 
 #自分で作成したファイルをインポート
+from Check.End import *
+
+#引数や-hのオプションを定義
+parser = argparse.ArgumentParser(prog='Run_ApkFile_in_Genymotion',description='オプションと引数の説明',
+                                epilog='以上')
+
+parser.add_argument('apkFolder',type=str, help='Apkファイルを保存しているフォルダを指定, 型：%(type)s')
+parser.add_argument('adbFolder',type=str,help='GenymotionのAdbファイルが保存しているフォルダを指定, 型：%(type)s')
+parser.add_argument('-v','--version', action='version', version='%(prog)s version 6/8')
+
+#args = parser.parse_args()
 
 #引数を定義
 #１．APKファイルを保存しているPath
 #２．Adbファイルを保存しているPath
 #３．
-arguMain = sys.argv
+#arguMain = sys.argv
+arguMain = parser.parse_args()
 
 #引数の数でエラー表示
+
 checkNum = checkArgument(arguMain)
 if not (checkNum == 0):
     print '終了します'
-    #print checkNum
+    print checkNum
     sys.exit()
 
 
 #APKファイル保存フォルダPath
-apkFileFpath = arguMain[1]
+#apkFileFpath = arguMain[1]
 #print apkFileFpath
 
+
 #Adbファイル保存フォルダPath
-adbFileFpath = arguMain[2]
+#adbFileFpath = arguMain[2]
 #print adbFileFpath
+
 
 #APKを保存しているPathからAPKファイルのリストを作成
 
