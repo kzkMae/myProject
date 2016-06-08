@@ -36,6 +36,7 @@ if not (checkNum == 0):
     print checkNum
     sys.exit()
 
+print '無問題'
 
 #APKファイル保存フォルダPath
 #apkFileFpath = arguMain[1]
