@@ -7,7 +7,6 @@ def checkargumentType(argMain):
         if xtypeList[i].isdigit():
             print '数字として処理できてしまう'
             return 1
-
     return 0
 
 
@@ -20,10 +19,22 @@ def checkargumentEqual(apkFolder, adbFolder):
     return 0
 
 
+#「/」で始まり，「/」で終わっているか→フォルダを指定しているか
+def checkargumentFolder(apkFolder, adbFolder):
+    if not (apkFolder.startswith('/') and adbFolder.startswith('/')):
+        print '「/」で始めてください'
+        return 1
+    if not (apkFolder.endswith('/') and adbFolder.endswith('/')):
+        print '「/」で終わってください'
+        return 1
+    return 0
+
+
 #引数の数と文字列かどうかを判定
 def checkArgument(argMain):
     rx = 0
     rx += checkargumentType(argMain)
     rx += checkargumentEqual(argMain.apkFolder, argMain.adbFolder)
+    rx += checkargumentFolder(argMain.apkFolder, argMain.adbFolder)
     return rx
 
