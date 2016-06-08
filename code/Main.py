@@ -9,7 +9,10 @@ import sys
 import argparse
 
 #自分で作成したファイルをインポート
+#入力した引数のチェック
 from Check.End import *
+#引数をもとに指定のフォルダを見つける
+from Find.FindFolder import *
 
 #引数や-hのオプションを定義
 parser = argparse.ArgumentParser(prog='Run_ApkFile_in_Genymotion',description='オプションと引数の説明',
