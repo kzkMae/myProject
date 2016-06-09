@@ -28,4 +28,8 @@ def ADBfileExist(adbFolder):
     print 'adbの実行ファイルが存在しないゾ☆'
     return 1
 
+#adbファイルの絶対パスとエラーチェック用コードを返却する
+def ADBfilePath(adbFolder):
+    checkNum = ADBfileExist(adbFolder)
+    return checkNum, adbFolder+'adb'
 
