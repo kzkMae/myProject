@@ -4,7 +4,7 @@ import os
 
 #フォルダの有無を確認
 def findFolderExist(folderName):
-    folderExist = os.path.exists(folderName.lstrip('/'))
+    folderExist = os.path.exists(folderName)
     if folderExist:
         return 0
     return 1
