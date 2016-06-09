@@ -16,6 +16,16 @@ def findFolderMain(apkFolder, adbFolder):
     for i in range(len(folderList)):
         j = findFolderExist(folderList[i])
         if not (j == 0):
-            print '引数で指定されたフォルダは存在しません'
+            print '引数で指定されたフォルダ('+folderList[i]+')は存在しません'
             return 1
     return 0
+
+#adbフォルダ内にadbの実行ファイルがあるかを確認
+def ADBfileExist(adbFolder):
+    fileExist = os.path.isfile(adbFolder + 'adb')
+    if fileExist:
+        return 0
+    print 'adbの実行ファイルが存在しないゾ☆'
+    return 1
+
+#APKファイルが入っているフォルダ内を調査
