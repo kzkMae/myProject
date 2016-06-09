@@ -1,8 +1,6 @@
 # coding:utf-8
 import os
 
-def x():
-    return 0
 
 #フォルダの有無を確認
 def findFolderExist(folderName):
@@ -12,3 +10,12 @@ def findFolderExist(folderName):
     return 1
 
 
+#引数に与えられた文字列のフォルダが存在するかを確認
+def findFolderMain(apkFolder, adbFolder):
+    folderList = [apkFolder, adbFolder]
+    if i in range(len(folderList)):
+        j = findFolderExist(folderList[i])
+        if not (j == 0):
+            print '引数で指定されたフォルダは存在しません'
+            return 1
+    return 0
