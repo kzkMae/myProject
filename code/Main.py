@@ -31,9 +31,22 @@ parser.add_argument('-v','--version', action='version', version='%(prog)s versio
 #arguMain = sys.argv
 arguMain = parser.parse_args()
 
-#引数の数でエラー表示
-
+#引数のエラー表示
 checkNum = checkArgument(arguMain)
+
+#APKファイル保存フォルダPath
+apkFileFpath = arguMain.apkFolder
+#print apkFileFpath
+
+#Adbファイル保存フォルダPath
+adbFileFpath = arguMain.adbFolder
+#print adbFileFpath
+
+
+
+checkNum += findFolderMain(apkFileFpath, adbFileFpath)
+
+#エラーチェック
 if not (checkNum == 0):
     print '終了します'
     print checkNum
@@ -41,14 +54,8 @@ if not (checkNum == 0):
 
 print '無問題'
 
-#APKファイル保存フォルダPath
-#apkFileFpath = arguMain[1]
-#print apkFileFpath
 
 
-#Adbファイル保存フォルダPath
-#adbFileFpath = arguMain[2]
-#print adbFileFpath
 
 
 #APKを保存しているPathからAPKファイルのリストを作成
