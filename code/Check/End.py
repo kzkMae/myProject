@@ -1,4 +1,5 @@
 # coding:utf-8
+import os.path
 
 #引数が文字列であるかどうかを調査
 def checkargumentType(argMain):
@@ -21,8 +22,10 @@ def checkargumentEqual(apkFolder, adbFolder):
 
 #「/」で始まり，「/」で終わっているか→フォルダを指定しているか
 def checkargumentFolder(apkFolder, adbFolder):
-    if not (apkFolder.startswith('/') and adbFolder.startswith('/')):
-        print '「/」で始めてください'
+    #if not (apkFolder.startswith('/') and adbFolder.startswith('/')):
+    if not (os.path.isabs(apkFolder) and os.path.isabs(adbFolder)):
+        #print '「/」で始めてください'
+        print '絶対パスを指定してください'
         return 1
     if not (apkFolder.endswith('/') and adbFolder.endswith('/')):
         print '「/」で終わってください'
