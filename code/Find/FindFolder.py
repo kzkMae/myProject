@@ -28,4 +28,4 @@ def ADBfileExist(adbFolder):
     print 'adbの実行ファイルが存在しないゾ☆'
     return 1
 
-#APKファイルが入っているフォルダ内を調査
+

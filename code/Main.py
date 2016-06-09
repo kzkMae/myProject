@@ -53,13 +53,7 @@ adbFileFpath = arguMain.adbFolder
 checkNum = findFolderMain(apkFileFpath, adbFileFpath)
 
 deadErrorEnd(checkNum)
-'''
-#エラーチェック
-if not (checkNum == 0):
-    print '終了します'
-    print checkNum
-    sys.exit()
-'''
+
 print '無問題'
 
 
