@@ -11,6 +11,7 @@ import argparse
 #自分で作成したファイルをインポート
 #入力した引数のチェック
 from Check.End import *
+from Check.DeadEnd import *
 #引数をもとに指定のフォルダを見つける
 from Find.FindFolder import *
 
@@ -24,6 +25,10 @@ parser.add_argument('-v','--version', action='version', version='%(prog)s versio
 
 #args = parser.parse_args()
 
+#変数の定義
+#エラーをチェック
+checkNum = 0
+
 #引数を定義
 #１．APKファイルを保存しているPath
 #２．Adbファイルを保存しているPath
@@ -34,6 +39,8 @@ arguMain = parser.parse_args()
 #引数のエラー表示
 checkNum = checkArgument(arguMain)
 
+deadErrorEnd(checkNum)
+
 #APKファイル保存フォルダPath
 apkFileFpath = arguMain.apkFolder
 #print apkFileFpath
@@ -43,15 +50,16 @@ adbFileFpath = arguMain.adbFolder
 #print adbFileFpath
 
 
+checkNum = findFolderMain(apkFileFpath, adbFileFpath)
 
-checkNum += findFolderMain(apkFileFpath, adbFileFpath)
-
+deadErrorEnd(checkNum)
+'''
 #エラーチェック
 if not (checkNum == 0):
     print '終了します'
     print checkNum
     sys.exit()
-
+'''
 print '無問題'
 
 
