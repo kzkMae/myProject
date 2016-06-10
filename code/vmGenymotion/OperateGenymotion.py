@@ -1,5 +1,6 @@
 # coding:utf-8
 
-#
-def x():
+#Genymotionを操作するメイン関数
+def operateGenymotionMain(apkName, vmName, playerPath):
+    print apkName
     return 0

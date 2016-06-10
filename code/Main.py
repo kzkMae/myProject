@@ -76,6 +76,9 @@ checkNum, playerPath = PLAYERfilePath(adbFileFpath)
 #ErrorCheck
 deadErrorEnd(checkNum)
 
+#Adbファイル保存フォルダPath
+genymotionVMname = arguMain.vmName
+#print adbFileFpath
 
 
 
@@ -83,10 +86,13 @@ deadErrorEnd(checkNum)
 for i in range(apkFileNumber):
     #print i
     apkFilePath = apkFileList[i]
-    print apkFilePath
-
     #Genymotionを起動
     print 'Genymotion起動'
+    checkNum = operateGenymotionMain(apkFilePath, genymotionVMname, playerPath)
+    #ErrorCheck
+    deadErrorEnd(checkNum)
+
+
 
 
 #testCode(最終的には外す or コメントアウト)
