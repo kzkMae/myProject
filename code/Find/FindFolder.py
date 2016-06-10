@@ -33,3 +33,18 @@ def ADBfilePath(adbFolder):
     checkNum = ADBfileExist(adbFolder)
     return checkNum, adbFolder+'adb'
 
+#Genymotionを起動できる実行ファイル「player」があるか否かを判定
+def PLAYERfileExist(adbFolder):
+    fileExist = os.path.isfile(adbFolder+'../player')
+    if fileExist:
+        return 0
+    print 'playerの実行ファイルが存在しないゾ☆'
+    return 1
+
+#Genimotionを起動できる実行ファイル「player」へのPathを返却
+def PLAYERfilePath(adbFolder):
+    checkNum = PLAYERfileExist(adbFolder)
+    return checkNum, adbFolder+'../player'
+
+
+
