@@ -67,14 +67,21 @@ checkNum, apkFileList, apkFileNumber = getAPKfileList(apkFileFpath)
 #ErrorCheck
 deadErrorEnd(checkNum)
 
+
+#以下，繰り返し
+for i in range(apkFileNumber):
+    #print i
+    apkFilePath = apkFileList[i]
+    print apkFilePath
+
+    #Genymotionを起動
+    print 'Genymotion起動'
+
+
 #testCode(最終的には外す or コメントアウト)
 print '無問題'
 
 
-
-#以下，繰り返し
-
-#Genymotionを起動
 
 
 
