@@ -5,6 +5,6 @@ import sys
 def deadErrorEnd(checkNumber):
     if not (checkNumber == 0):
         print '終了します'
-        print checkNumber
+        #print checkNumber
         sys.exit()
     return 0

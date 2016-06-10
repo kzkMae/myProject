@@ -12,8 +12,9 @@ import argparse
 #入力した引数のチェック
 from Check.End import *
 from Check.DeadEnd import *
-#引数をもとに指定のフォルダを見つける
+#引数をもとに指定のフォルダ・ファイルを見つける
 from Find.FindFolder import *
+from Find.FindAPKFile import *
 
 #引数や-hのオプションを定義
 parser = argparse.ArgumentParser(prog='Run_ApkFile_in_Genymotion',description='オプションと引数の説明',
@@ -60,11 +61,15 @@ checkNum, adbPath = ADBfilePath(adbFileFpath)
 #ErrorCheck
 deadErrorEnd(checkNum)
 
+
+#APKを保存しているPathからAPKファイルのリストを作成
+checkNum, apkFileList, apkFileNumber = getAPKfileList(apkFileFpath)
+#ErrorCheck
+deadErrorEnd(checkNum)
+
 #testCode(最終的には外す or コメントアウト)
 print '無問題'
 
-
-#APKを保存しているPathからAPKファイルのリストを作成
 
 
 #以下，繰り返し
