@@ -38,7 +38,7 @@ arguMain = parser.parse_args()
 
 #引数のエラー表示
 checkNum = checkArgument(arguMain)
-
+#ErrorCheck
 deadErrorEnd(checkNum)
 
 #APKファイル保存フォルダPath
@@ -51,13 +51,17 @@ adbFileFpath = arguMain.adbFolder
 
 
 checkNum = findFolderMain(apkFileFpath, adbFileFpath)
-
+#ErrorCheck
 deadErrorEnd(checkNum)
 
+
+#ADBの実行ファイルの絶対パスを取得
+checkNum, adbPath = ADBfilePath(adbFileFpath)
+#ErrorCheck
+deadErrorEnd(checkNum)
+
+#testCode(最終的には外す or コメントアウト)
 print '無問題'
-
-
-
 
 
 #APKを保存しているPathからAPKファイルのリストを作成
