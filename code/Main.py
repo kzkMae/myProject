@@ -15,6 +15,8 @@ from Check.DeadEnd import *
 #引数をもとに指定のフォルダ・ファイルを見つける
 from Find.FindFolder import *
 from Find.FindAPKFile import *
+#Genymotion操作用の関数
+from vmGenymotion.OperateGenymotion import *
 
 #引数や-hのオプションを定義
 parser = argparse.ArgumentParser(prog='Run_ApkFile_in_Genymotion',description='オプションと引数の説明',
