@@ -22,9 +22,10 @@ from vmGenymotion.OperateGenymotion import *
 parser = argparse.ArgumentParser(prog='Run_ApkFile_in_Genymotion',description='オプションと引数の説明',
                                 epilog='以上')
 
-parser.add_argument('apkFolder',type=str, help='Apkファイルを保存しているフォルダを指定, 型：%(type)s')
-parser.add_argument('adbFolder',type=str,help='GenymotionのAdbファイルが保存しているフォルダを指定, 型：%(type)s')
+parser.add_argument('apkFolder',type=str, help='Apkファイルを保存しているフォルダを指定, 型：%(type)s，String')
+parser.add_argument('adbFolder',type=str,help='GenymotionのAdbファイルが保存しているフォルダを指定, 型：%(type)s，String')
 parser.add_argument('-v','--version', action='version', version='%(prog)s version 6/8')
+parser.add_argument('vmName', type=str, help='Genumotionで起動する仮想マシン名(VM Name)を指定，型：%(type)s，String')
 
 #args = parser.parse_args()
 
@@ -90,7 +91,6 @@ for i in range(apkFileNumber):
 
 #testCode(最終的には外す or コメントアウト)
 print '無問題'
-print playerPath
 
 
 
