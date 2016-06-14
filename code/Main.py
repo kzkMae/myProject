@@ -70,15 +70,15 @@ checkNum, apkFileList, apkFileNumber = getAPKfileList(apkFileFpath)
 #ErrorCheck
 deadErrorEnd(checkNum)
 
-
+'''
 #Genymotion起動用実行ファイルのパスを取得
 checkNum, playerPath = PLAYERfilePath(adbFileFpath)
 #ErrorCheck
 deadErrorEnd(checkNum)
+'''
 
-#Adbファイル保存フォルダPath
+#仮想マシンの名前
 genymotionVMname = arguMain.vmName
-#print adbFileFpath
 
 
 
@@ -88,7 +88,7 @@ for i in range(apkFileNumber):
     apkFilePath = apkFileList[i]
     #Genymotionを起動
     print 'Genymotion起動'
-    checkNum = operateGenymotionMain(apkFilePath, genymotionVMname, playerPath)
+    checkNum = operateGenymotionMain(apkFilePath, genymotionVMname)
     #ErrorCheck
     deadErrorEnd(checkNum)
 
@@ -96,6 +96,7 @@ for i in range(apkFileNumber):
 
 
 #testCode(最終的には外す or コメントアウト)
+
 print '無問題'
 
 
