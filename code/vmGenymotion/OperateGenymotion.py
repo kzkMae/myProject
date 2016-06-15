@@ -47,7 +47,7 @@ def operateGenymotionMain(apkName, vmName, adbPath):
     deadErrorEnd(checkNumber)
 
     #VMをリストア
-    checkNumber = vmSnapRestore()
+    checkNumber = vmSnapRestore(vmName)
     #エラーのチェック
     deadErrorEnd(checkNumber)
     return 0

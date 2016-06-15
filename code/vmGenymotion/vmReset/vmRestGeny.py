@@ -7,11 +7,11 @@ import time
 vmSnapName = ['WhiteExe']
 
 #vmスナップショットリストアコマンド
-cmdRestore = ['VBoxManage snapshot "','" restorecurrent']
+cmdRestore = ['VBoxManage snapshot "','" restore "','"']
 
-def vmSnapRestore():
+def vmSnapRestore(vmName):
     checkNum = 0
-    cmd = cmdRestore[0] + vmSnapName[0] + cmdRestore[1]
+    cmd = cmdRestore[0] + vmName + cmdRestore[1] + vmSnapName[0] + cmdRestore[2]
     print cmd
     checkNum = os.system(cmd)
     time.sleep(10)
