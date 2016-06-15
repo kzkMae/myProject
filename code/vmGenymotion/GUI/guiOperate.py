@@ -12,8 +12,8 @@ import time
 startGeny = ['114','133']
 #Genymotionの修了ボタン(x,y)
 endGeny = ['642','45']
-#Wait時間(クリックまでの間隔，起動後)
-waiTime = [0.5,30]
+#Wait時間(クリックまでの間隔，起動後，終了後)
+waiTime = [0.5,25,5]
 #xteコマンド(基礎)
 xte = 'xte '
 #xteコマンドの中身用
@@ -29,11 +29,11 @@ def startGenymotionClick():
     startXY = startGeny[0] + ' ' + startGeny[1]
     #コマンド作成
     cmd_m = xte + sq + mouseMove + startXY + sq
-    print cmd_m
-    checkNum += os.system(cmd_m)
+    #print cmd_m
+    #checkNum += os.system(cmd_m)
     time.sleep(waiTime[0])
-    print cmd_c
-    checkNum += os.system(cmd_c)
+    #print cmd_c
+    #checkNum += os.system(cmd_c)
     #5秒間停止
     time.sleep(waiTime[1])
     return checkNum
@@ -45,13 +45,13 @@ def endGenymotionClick():
     endXY = endGeny[0] + ' ' + endGeny[1]
     #コマンド作成
     cmd_m = xte + sq + mouseMove + endXY + sq
-    print cmd_m
-    checkNum += os.system(cmd_m)
+    #print cmd_m
+    #checkNum += os.system(cmd_m)
     time.sleep(waiTime[0])
-    print cmd_c
-    checkNum += os.system(cmd_c)
+    #print cmd_c
+    #checkNum += os.system(cmd_c)
     #5秒間停止
-    time.sleep(waiTime[1])
+    time.sleep(waiTime[2])
     return checkNum
 
 
