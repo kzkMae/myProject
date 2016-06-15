@@ -41,6 +41,12 @@ def operateGenymotionMain(apkName, vmName, adbPath):
 
     #ここから
 
+
+    #パケットキャプチャーソフトの終了
+    checkNumber = packetCaptureEndMain(adbPath)
+    #エラーのチェック
+    deadErrorEnd(checkNumber)
+
     #Genymotionをクリックして終了
     checkNumber = endGenymotionMain()
     #エラーのチェック
