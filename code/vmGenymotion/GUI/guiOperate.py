@@ -30,10 +30,10 @@ def startGenymotionClick():
     #コマンド作成
     cmd_m = xte + sq + mouseMove + startXY + sq
     #print cmd_m
-    #checkNum += os.system(cmd_m)
+    checkNum += os.system(cmd_m)
     time.sleep(waiTime[0])
     #print cmd_c
-    #checkNum += os.system(cmd_c)
+    checkNum += os.system(cmd_c)
     #5秒間停止
     time.sleep(waiTime[1])
     return checkNum
@@ -46,10 +46,10 @@ def endGenymotionClick():
     #コマンド作成
     cmd_m = xte + sq + mouseMove + endXY + sq
     #print cmd_m
-    #checkNum += os.system(cmd_m)
+    checkNum += os.system(cmd_m)
     time.sleep(waiTime[0])
     #print cmd_c
-    #checkNum += os.system(cmd_c)
+    checkNum += os.system(cmd_c)
     #5秒間停止
     time.sleep(waiTime[2])
     return checkNum

@@ -17,19 +17,26 @@ keyevent = ' shell input keyevent '
 def packetCaptureStart(adbFile):
     checkNum = 0
     print adbFile + cmdCapS
-    #checkNum += os.system(adbFile + cmdCapS)
+    checkNum += os.system(adbFile + cmdCapS)
     time.sleep(timesec[0])
     for i in range(3):
         cmd = adbFile + keyevent +'KEYCODE_DPAD_DOWN'
         print cmd
-        #checkNum += os.system(cmd)
+        checkNum += os.system(cmd)
         time.sleep(timesec[1])
-    cmd = adbFile + keyevent + 'KEYCODE_ENTER'
-    print cmd
-    #checkNum += os.system(cmd)
+    cmdE = adbFile + keyevent + 'KEYCODE_ENTER'
+    print cmdE
+    checkNum += os.system(cmdE)
     time.sleep(timesec[2])
-    #checkNum += os.system(cmd)
+    checkNum += os.system(cmdE)
     time.sleep(timesec[2])
+
+    cmd = adbFile + keyevent + 'KEYCODE_DPAD_RIGHT'
+    checkNum += os.system(cmd)
+    time.sleep(timesec[2])
+    checkNum += os.system(cmdE)
+    time.sleep(timesec[2])
+
     return checkNum
 
 #パケットキャプチャーソフト起動のメイン関数
