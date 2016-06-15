@@ -2,7 +2,7 @@
 
 #vmNameListは事前に登録しておく仮想マシンの名前
 #VMgenyはテスト用なので後で消すように
-vmNameList = ['VMgeny']
+vmNameList = ['VMgeny', 'Nexus4Main']
 
 #vmNameが（本ポログラムに）事前に登録されているものと一致するかどうかを確認
 def checkVMname(vmName):

@@ -12,8 +12,8 @@ import time
 startGeny = ['114','133']
 #Genymotionの修了ボタン(x,y)
 endGeny = ['642','45']
-#Wait時間(起動直後)
-waiTime = [0.5,5]
+#Wait時間(クリックまでの間隔，起動後)
+waiTime = [0.5,30]
 #xteコマンド(基礎)
 xte = 'xte '
 #xteコマンドの中身用
