@@ -33,6 +33,20 @@ def ADBfilePath(adbFolder):
     checkNum = ADBfileExist(adbFolder)
     return checkNum, adbFolder+'adb'
 
+#アプリの起動に必要なActivity名を取得するのに必要なaaptのスクリプトがあるかを確認
+def AAPTfileExist(adbFolder):
+    fileExist = os.path.isfile(adbFolder + 'aapt')
+    if fileExist:
+        return 0
+    print 'aaptの実行ファイルが存在しないゾ☆'
+    return 1
+
+#aaptファイルの絶対パスとエラーチェック用コードを返却
+def AAPTfilePath(adbFolder):
+    checkNum = AAPTfilePath(adbFolder)
+    return  checkNum, adbFolder+'aapt'
+
+
 #Genymotionを起動できる実行ファイル「player」があるか否かを判定
 def PLAYERfileExist(adbFolder):
     fileExist = os.path.isfile(adbFolder+'../player')

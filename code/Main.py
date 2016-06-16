@@ -24,8 +24,9 @@ parser = argparse.ArgumentParser(prog='Run_ApkFile_in_Genymotion',description='�
 
 parser.add_argument('apkFolder',type=str, help='Apkファイルを保存しているフォルダを指定, 型：%(type)s，String')
 parser.add_argument('adbFolder',type=str,help='GenymotionのAdbファイルが保存しているフォルダを指定, 型：%(type)s，String')
-parser.add_argument('-v','--version', action='version', version='%(prog)s version 6/8')
+parser.add_argument('-v','--version', action='version', version='%(prog)s version 6/15')
 parser.add_argument('vmName', type=str, help='Genumotionで起動する仮想マシン名(VM Name)を指定，型：%(type)s，String')
+parser.add_argument('pcapFolder',type=str, help='パケットキャプチャーした後のPcapデータを保存するフォルダ，型：%(type)s, String')
 
 #args = parser.parse_args()
 
@@ -53,7 +54,11 @@ apkFileFpath = arguMain.apkFolder
 adbFileFpath = arguMain.adbFolder
 #print adbFileFpath
 
+#Pcapフォルダを保存するフォルダパス
+pcapFolderPath = arguMain.pcapFolder
 
+
+#フォルダが存在するかを確認
 checkNum = findFolderMain(apkFileFpath, adbFileFpath)
 #ErrorCheck
 deadErrorEnd(checkNum)
@@ -63,6 +68,13 @@ deadErrorEnd(checkNum)
 checkNum, adbPath = ADBfilePath(adbFileFpath)
 #ErrorCheck
 deadErrorEnd(checkNum)
+
+
+#AAPTの実行ファイルの絶対パスを取得
+checkNum, aaptPath = AAPTfilePath(adbFileFpath)
+#ErrorCheck
+deadErrorEnd(checkNum)
+
 
 
 #APKを保存しているPathからAPKファイルのリストを作成
@@ -88,7 +100,7 @@ for i in range(apkFileNumber):
     apkFilePath = apkFileList[i]
     #Genymotionを起動
     print 'Genymotion起動'
-    checkNum = operateGenymotionMain(apkFilePath, genymotionVMname, adbPath)
+    checkNum = operateGenymotionMain(apkFilePath, genymotionVMname, adbPath, aaptPath)
     #ErrorCheck
     deadErrorEnd(checkNum)
 
@@ -103,30 +115,8 @@ print '無問題'
 
 
 
-#パケットキャプチャーツールを起動
-
-
-
 #GenymotionにAPKファイルをインストール
 
-
-
-#パケットキャプチャーを停止
-
-
-
-#パケットキャプチャーしたファイルを共有フォルダに移動
-
-
-
-#共有フォルダからPcapファイルを取り出す
-
-
-#Genymotionを停止
-
-
-
-#VirtualBoxをスナップショットから復元
 
 
 #APKファイルをSHA256を計算

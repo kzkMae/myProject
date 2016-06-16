@@ -26,7 +26,7 @@ def operateGenymotionMain(apkName, vmName, playerPath):
 
 
 #Genymotionを操作するメイン関数
-def operateGenymotionMain(apkName, vmName, adbPath):
+def operateGenymotionMain(apkName, vmName, adbPath, aaptPath):
     print apkName
     #Genymotionをクリックして起動
     checkNumber = startGenymotionMain()

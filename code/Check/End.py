@@ -7,7 +7,7 @@ from NameCheck.checkName import *
 
 #引数が文字列であるかどうかを調査
 def checkargumentType(argMain):
-    xtypeList = [argMain.apkFolder, argMain.adbFolder, argMain.vmName]
+    xtypeList = [argMain.apkFolder, argMain.adbFolder, argMain.vmName, argMain.pcapFolder]
     for i in range(len(xtypeList)):
         if xtypeList[i].isdigit():
             print '数字として処理できてしまう'
@@ -25,13 +25,13 @@ def checkargumentEqual(apkFolder, adbFolder):
 
 
 #「/」で始まり，「/」で終わっているか→フォルダを指定しているか
-def checkargumentFolder(apkFolder, adbFolder):
+def checkargumentFolder(apkFolder, adbFolder, pcapFolder):
     #if not (apkFolder.startswith('/') and adbFolder.startswith('/')):
-    if not (os.path.isabs(apkFolder) and os.path.isabs(adbFolder)):
+    if not (os.path.isabs(apkFolder) and os.path.isabs(adbFolder) and os.path.isabs(pcapFolder)):
         #print '「/」で始めてください'
         print '絶対パスを指定してください'
         return 1
-    if not (apkFolder.endswith('/') and adbFolder.endswith('/')):
+    if not (apkFolder.endswith('/') and adbFolder.endswith('/') and pcapFolder.endswith('/')):
         print '「/」で終わってください'
         return 1
     return 0
@@ -53,7 +53,7 @@ def checkArgument(argMain):
     #フォルダが同じでないことを確認
     rx += checkargumentEqual(argMain.apkFolder, argMain.adbFolder)
     #絶対パスであり，「/」で終わっていることを確認
-    rx += checkargumentFolder(argMain.apkFolder, argMain.adbFolder)
+    rx += checkargumentFolder(argMain.apkFolder, argMain.adbFolder, argMain.pcapFolder)
     #vmNameに対する確認
     rx += checkargumentVMName(argMain.vmName)
     return rx
