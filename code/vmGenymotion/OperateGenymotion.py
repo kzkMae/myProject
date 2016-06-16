@@ -39,7 +39,13 @@ def operateGenymotionMain(apkName, vmName, adbPath, aaptPath):
     #エラーのチェック
     deadErrorEnd(checkNumber)
 
+    #APKファイルのインストールと実行
+    checkNum = executeAPKMain(apkName, adbPath, aaptPath)
+    # エラーのチェック
+    deadErrorEnd(checkNumber)
+
     #ここから
+
 
 
     #パケットキャプチャーソフトの終了
