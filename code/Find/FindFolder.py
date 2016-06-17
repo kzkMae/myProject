@@ -43,7 +43,7 @@ def AAPTfileExist(adbFolder):
 
 #aaptファイルの絶対パスとエラーチェック用コードを返却
 def AAPTfilePath(adbFolder):
-    checkNum = AAPTfilePath(adbFolder)
+    checkNum = AAPTfileExist(adbFolder)
     return  checkNum, adbFolder+'aapt'
 
 
