@@ -4,6 +4,8 @@ from GUI.guiOperate import *
 from apkGenymotion.executeAPK import *
 from apkGenymotion.packetCapture import *
 from vmReset.vmRestGeny import *
+from mvPacetData.sandPcap import *
+
 
 #Genymotionの起動（引数は仮想マシン名）
 def startGenymotion(playerPath, vmName):
@@ -26,7 +28,7 @@ def operateGenymotionMain(apkName, vmName, playerPath):
 
 
 #Genymotionを操作するメイン関数
-def operateGenymotionMain(apkName, vmName, adbPath, aaptPath):
+def operateGenymotionMain(apkName, vmName, adbPath, aaptPath, pcapFolder):
     print apkName
     #Genymotionをクリックして起動
     checkNumber = startGenymotionMain()
@@ -52,6 +54,9 @@ def operateGenymotionMain(apkName, vmName, adbPath, aaptPath):
     checkNumber = packetCaptureEndMain(adbPath)
     #エラーのチェック
     deadErrorEnd(checkNumber)
+
+    #パケットキャプチャーソフトで作成したPcapファイルをローカルフォルダに移動する
+    checkNum = mvPcapFileMain(adbPath, pcapFolder, apkName)
 
     #Genymotionをクリックして終了
     checkNumber = endGenymotionMain()

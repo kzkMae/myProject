@@ -100,7 +100,7 @@ for i in range(apkFileNumber):
     apkFilePath = apkFileList[i]
     #Genymotionを起動
     print 'Genymotion起動'
-    checkNum = operateGenymotionMain(apkFilePath, genymotionVMname, adbPath, aaptPath)
+    checkNum = operateGenymotionMain(apkFilePath, genymotionVMname, adbPath, aaptPath, pcapFolderPath)
     #ErrorCheck
     deadErrorEnd(checkNum)
 
