@@ -39,12 +39,12 @@ def operateGenymotionMain(apkName, vmName, adbPath, aaptPath, pcapFolder):
     #パケットキャプチャーソフトの起動
     checkNumber = packetCaptureStartMain(adbPath)
     #エラーのチェック
-    deadErrorEnd(checkNumber)
+    deadErrorEnd(checkNumber,vmName)
 
     #APKファイルのインストールと実行
     checkNum = executeAPKMain(apkName, adbPath, aaptPath)
     # エラーのチェック
-    deadErrorEnd(checkNumber)
+    deadErrorEnd(checkNumber,vmName)
 
     #ここから
 
@@ -53,7 +53,7 @@ def operateGenymotionMain(apkName, vmName, adbPath, aaptPath, pcapFolder):
     #パケットキャプチャーソフトの終了
     checkNumber = packetCaptureEndMain(adbPath)
     #エラーのチェック
-    deadErrorEnd(checkNumber)
+    deadErrorEnd(checkNumber,vmName)
 
     #パケットキャプチャーソフトで作成したPcapファイルをローカルフォルダに移動する
     checkNum = mvPcapFileMain(adbPath, pcapFolder, apkName)
@@ -61,7 +61,7 @@ def operateGenymotionMain(apkName, vmName, adbPath, aaptPath, pcapFolder):
     #Genymotionをクリックして終了
     checkNumber = endGenymotionMain()
     #エラーのチェック
-    deadErrorEnd(checkNumber)
+    deadErrorEnd(checkNumber,vmName)
 
     #VMをリストア
     checkNumber = vmSnapRestore(vmName)
