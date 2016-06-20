@@ -31,7 +31,7 @@ vmSnapName = ['WhiteExe']
 cmdRestore = ['VBoxManage snapshot "','" restore "','"']
 
 #Genymotion操作中のエラーの場合の終了手順
-def deadErrorEnd(checkNumber, vmName):
+def deadErrorEnd2(checkNumber, vmName):
     if not (checkNumber == 0):
         #Genymotionの終了
         print 'Genymotionを強制終了します'
