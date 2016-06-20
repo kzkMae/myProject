@@ -4,7 +4,7 @@ import os
 import time
 
 #Genymotion内のPcapが保存されているフォルダパス
-genyPfolder = '/storage/emulated/legacy/Android/data/jp.taosoftware.android.packetcapture/files '
+genyPfolder = '/storage/emulated/legacy/Android/data/jp.co.taosoftware.android.packetcapture/files '
 pullcmd = ' pull '
 
 
