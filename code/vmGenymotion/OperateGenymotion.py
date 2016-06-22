@@ -46,10 +46,10 @@ def operateGenymotionMain(apkName, vmName, adbPath, aaptPath, pcapFolder):
     # エラーのチェック
     deadErrorEnd2(checkNumber,vmName)
 
-    #ここから
-    checkNumber = (apkName,adbPath,aaptPath)
-    # エラーのチェック
-    deadErrorEnd2(checkNumber,vmName)
+    #ここから?
+    #checkNumber = (apkName,adbPath,aaptPath)
+    ## エラーのチェック
+    #deadErrorEnd2(checkNumber,vmName)
 
 
 
