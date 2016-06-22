@@ -42,11 +42,14 @@ def operateGenymotionMain(apkName, vmName, adbPath, aaptPath, pcapFolder):
     deadErrorEnd2(checkNumber,vmName)
 
     #APKファイルのインストールと実行
-    checkNum = executeAPKMain(apkName, adbPath, aaptPath)
+    checkNumber = executeAPKMain(apkName, adbPath, aaptPath)
     # エラーのチェック
     deadErrorEnd2(checkNumber,vmName)
 
     #ここから
+    checkNumber = (apkName,adbPath,aaptPath)
+    # エラーのチェック
+    deadErrorEnd2(checkNumber,vmName)
 
 
 
