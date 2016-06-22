@@ -39,7 +39,7 @@ def apkInstall(adbPath, apkName):
     #インストール用のコマンド生成
     cmd = adbPath + ' install ' + apkName
     print cmd
-    #checkNum = os.system(cmd)
+    checkNum = os.system(cmd)
     return checkNum
 
 #apkNameのGenymotionの中にインストールし実行するためのメイン関数
