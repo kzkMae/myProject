@@ -26,7 +26,7 @@ mouseLClick = 'mouseclick 1'
 cmd_c = xte + sq + mouseLClick + sq
 
 #Vmのスナップショット名
-vmSnapName = ['WhiteExe']
+vmSnapName = ['WhiteMain']
 #vmスナップショットリストアコマンド
 cmdRestore = ['VBoxManage snapshot "','" restore "','"']
 
