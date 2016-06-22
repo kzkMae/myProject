@@ -4,7 +4,7 @@ import os
 import time
 
 #Vmのスナップショット名
-vmSnapName = ['WhiteExe']
+vmSnapName = ['WhiteMain']
 
 #vmスナップショットリストアコマンド
 cmdRestore = ['VBoxManage snapshot "','" restore "','"']
