@@ -46,9 +46,9 @@ def operateGenymotionMain(apkName, vmName, adbPath, aaptPath, pcapFolder):
     # エラーのチェック
     deadErrorEnd2(checkNumber,vmName)
 
-    #ここから?
-    #適切な時間の設定（計測時間）
 
+    #60秒間パケットを記録
+    time.sleep(60)
 
 
     #パケットキャプチャーソフトの終了
@@ -59,8 +59,6 @@ def operateGenymotionMain(apkName, vmName, adbPath, aaptPath, pcapFolder):
     #パケットキャプチャーソフトで作成したPcapファイルをローカルフォルダに移動する
     checkNum = mvPcapFileMain(adbPath, pcapFolder, apkName)
 
-    #60秒間パケットを記録
-    time.sleep(60)
 
     #Genymotionをクリックして終了
     checkNumber = endGenymotionMain()
