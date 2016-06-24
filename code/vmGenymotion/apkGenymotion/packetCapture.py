@@ -23,11 +23,9 @@ def packetCaptureStart(adbFile):
     time.sleep(timesec[0])
     for i in range(3):
         cmd = adbFile + keyevent +'KEYCODE_DPAD_DOWN'
-        print cmd
         checkNum += os.system(cmd)
         time.sleep(timesec[1])
     cmdE = adbFile + keyevent + 'KEYCODE_ENTER'
-    print cmdE
     checkNum += os.system(cmdE)
     time.sleep(timesec[2])
     checkNum += os.system(cmdE)
