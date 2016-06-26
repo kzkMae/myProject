@@ -2,15 +2,16 @@
 
 import os
 #ログ制御用のコマンド定義
-logcat = ' logcat '
+logCat = ' logcat '
 clear = '-c'
-logtime = '-v time -d > '
+logTime = '-v time -d > '
 fileName = '/Log.txt'
 
 def logClear(adbPath):
     #pcapFPath, exts = os.path.splitext(os.path.basename(apkFile))
     checkNum = 0
-    cmd = adbPath + logcat + clear
+    cmd = adbPath + logCat + clear
+    print cmd
     checkNum += os.system(cmd)
     return checkNum
 
@@ -19,6 +20,7 @@ def logClear(adbPath):
 def getLogfile(adbPath, apkFile, pcapPath):
     checkNum = 0
     pcapFPath, exts = os.path.splitext(os.path.basename(apkFile))
-    cmd = adbPath + logcat + logtime + pcapFPath + fileName
+    cmd = adbPath + logCat + logTime + pcapPath +pcapFPath + fileName
+    print cmd
     checkNum += os.system(cmd)
     return checkNum
