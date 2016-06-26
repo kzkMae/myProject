@@ -1,4 +1,4 @@
-# conding:utf-8
+# coding:utf-8
 
 import os
 #ログ制御用のコマンド定義
