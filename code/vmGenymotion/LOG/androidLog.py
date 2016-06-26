@@ -21,6 +21,9 @@ def getLogfile(adbPath, apkFile, pcapPath):
     checkNum = 0
     pcapFPath, exts = os.path.splitext(os.path.basename(apkFile))
     cmd = adbPath + logCat + logTime + pcapPath +pcapFPath + fileName
+    cmd2 = 'mkdir ' + pcapPath + pcapFPath
+    print cmd2
+    checkNum += os.system(cmd2)
     print cmd
     checkNum += os.system(cmd)
     return checkNum
