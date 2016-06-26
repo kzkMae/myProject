@@ -18,7 +18,7 @@ tap = ' shell input tap '
 #インプットを取り付ける
 def packetCaptureStart(adbFile):
     checkNum = 0
-    print adbFile + cmdCapS
+    #print adbFile + cmdCapS
     checkNum += os.system(adbFile + cmdCapS)
     time.sleep(timesec[0])
     for i in range(3):

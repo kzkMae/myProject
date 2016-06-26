@@ -10,14 +10,14 @@ def getPackegeName(apkName , aaptPath):
     cmd = aaptPath + ' l -a ' + apkName + ' | grep "A: package"'
     packagenameLine = subprocess.check_output([cmd], shell=True)
     packageName = packagenameLine.split('"')[1]
-    print packageName
+    #print packageName
     return packageName
 
 def getMainActivityName(apkName, aaptPath):
     cmd = aaptPath + ' d badging ' + apkName + ' | grep "activity"'
     mainactivitynameLine = subprocess.check_output([cmd], shell=True)
     mainactivityName = mainactivitynameLine.split('\'')[1]
-    print mainactivityName
+    #print mainactivityName
     return mainactivityName
 
 def getExecuteCmd(packageName, activityName):
@@ -29,7 +29,7 @@ startCmd = ' shell am start -n '
 def startAPKapp(adbPath, exeCmd):
     checkNum =0
     cmd = adbPath + startCmd + exeCmd
-    print cmd
+    #print cmd
     checkNum += os.system(cmd)
     return checkNum
 
@@ -38,7 +38,7 @@ def apkInstall(adbPath, apkName):
     checkNum = 0
     #インストール用のコマンド生成
     cmd = adbPath + ' install ' + apkName
-    print cmd
+    #print cmd
     checkNum = os.system(cmd)
     return checkNum
 
