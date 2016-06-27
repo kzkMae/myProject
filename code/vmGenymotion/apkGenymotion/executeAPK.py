@@ -21,7 +21,9 @@ def getMainActivityName(apkName, aaptPath):
     return mainactivityName
 
 def getExecuteCmd(packageName, activityName):
-    executeCmd = packageName + '/.' + activityName.lstrip(packageName)
+    #executeCmd = packageName + '/.' + activityName.lstrip(packageName)
+    executeCmd = packageName + '/' + activityName
+    print executeCmd
     return executeCmd
 
 startCmd = ' shell am start -n '
