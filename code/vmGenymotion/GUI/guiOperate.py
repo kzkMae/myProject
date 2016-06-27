@@ -12,6 +12,7 @@ import time
 startGeny = ['114','133']
 #Genymotionの修了ボタン(x,y)
 endGeny = ['642','45']
+endGenyKey = ['Alt_L','F4']
 #Wait時間(クリックまでの間隔，起動後，終了後)
 waiTime = [0.5,25,5]
 #xteコマンド(基礎)
@@ -21,6 +22,9 @@ sq = '\''
 
 mouseMove = 'mousemove '
 mouseLClick = 'mouseclick 1'
+keyDown = 'keydown '
+keyUp = 'keyup '
+keyClick = 'key '
 cmd_c = xte + sq + mouseLClick + sq
 
 #Genymotion起動
@@ -54,6 +58,19 @@ def endGenymotionClick():
     time.sleep(waiTime[2])
     return checkNum
 
+def endGenymotionKey():
+    checkNum = 0
+    #コマンド作成
+    cmd_ad = xte + sq + keyDown + endGenyKey[0] + sq
+    checkNum += os.system(cmd_ad)
+    time.sleep(0.01)
+    cmd_k = xte + sq + keyClick + endGenyKey[1] + sq
+    checkNum += os.system(cmd_k)
+    time.sleep(0.01)
+    cmd_au = xte + sq + keyUp + endGenyKey[0] + sq
+    checkNum += os.system(cmd_au)
+    time.sleep(waiTime[2])
+    return checkNum
 
 #Genymotionを起動するMainの関数
 def startGenymotionMain():
@@ -61,5 +78,6 @@ def startGenymotionMain():
     return checkNum
 
 def endGenymotionMain():
-    checkNum = endGenymotionClick()
+    #checkNum = endGenymotionClick()
+    checkNum = endGenymotionKey()
     return checkNum
